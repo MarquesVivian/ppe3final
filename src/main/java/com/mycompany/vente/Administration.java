@@ -341,20 +341,47 @@ public class Administration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCreerActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       this.dispose();
-       Page.pageAccueil.setVisible(true);
+        this.dispose();
+        Page.pageAccueil.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed
-        
 
-
-
-String sqlabc = "DELETE FROM client; DELETE FROM personnel; DELETE FROM categorie;";
+//---------------------------------------------Suppretion de client-------------------------------------------------------------------------
+        String sqlabc = "DELETE FROM `client` WHERE idClient IN(1,2,3,4,5,6,7)";
         int Tuplesabc = DaoSIO.getInstance().requeteAction(sqlabc);
         if (Tuplesabc == 1) {
             System.out.println("Bien fait");
         }
+        sqlabc = null;
+        Tuplesabc = 0;
+        //---------------------------------------------Suppretion de Personnel-------------------------------------------------------------------------
+
+        sqlabc = "DELETE FROM `personnel` WHERE idPersonnel IN(1,2,3,4,5,6,7)";
+        Tuplesabc = DaoSIO.getInstance().requeteAction(sqlabc);
+        if (Tuplesabc == 1) {
+            System.out.println("Bien fait");
+        }
+        sqlabc = null;
+        Tuplesabc = 0;
+        //---------------------------------------------Suppretion de Categorie-------------------------------------------------------------------------
+
+        sqlabc = "DELETE FROM `categorie` WHERE idCategorie IN(1,2,3,4,5)";
+        Tuplesabc = DaoSIO.getInstance().requeteAction(sqlabc);
+        if (Tuplesabc == 1) {
+            System.out.println("Bien fait");
+        }
+        sqlabc = null;
+        Tuplesabc = 0;
+        //---------------------------------------------Suppretion de Profil-------------------------------------------------------------------------
+
+        sqlabc = "TRUNCATE `masque`.`profil`";
+        Tuplesabc = DaoSIO.getInstance().requeteAction(sqlabc);
+        if (Tuplesabc == 1) {
+            System.out.println("Bien fait");
+        }
+        sqlabc = null;
+        Tuplesabc = 0;
     }//GEN-LAST:event_jButtonSupprimerActionPerformed
 
     /**
