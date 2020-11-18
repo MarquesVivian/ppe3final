@@ -173,7 +173,7 @@ public class Connexion extends javax.swing.JFrame {
                 Logger.getLogger(Connexion.class.getName()).log(Level.SEVERE, null, ex);
             }
             Page.pageAccueil.show();//fait apparaitre la page Accueil (pageAccueil est Initialiser dans le constructeur et créer dans la class Identification
-            this.setVisible(false);
+            this.dispose();
         }
 
     }//GEN-LAST:event_jButtonConnexionActionPerformed

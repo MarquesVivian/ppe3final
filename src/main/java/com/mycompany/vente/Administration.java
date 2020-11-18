@@ -5,6 +5,8 @@
  */
 package com.mycompany.vente;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author Hp
@@ -195,6 +197,11 @@ public class Administration extends javax.swing.JFrame {
         jTabbedPaneAdmin.addTab("Facture", jPanelFacture);
 
         jButtonSupprimer.setText("Supprimer jeu d'essai");
+        jButtonSupprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSupprimerActionPerformed(evt);
+            }
+        });
 
         jButtonCreer.setText("Lancée jeu d'essai");
         jButtonCreer.addActionListener(new java.awt.event.ActionListener() {
@@ -208,9 +215,9 @@ public class Administration extends javax.swing.JFrame {
         jPanelJeuxEssaiLayout.setHorizontalGroup(
             jPanelJeuxEssaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelJeuxEssaiLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(383, Short.MAX_VALUE)
                 .addComponent(jButtonSupprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(41, 41, 41))
             .addGroup(jPanelJeuxEssaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelJeuxEssaiLayout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -219,10 +226,10 @@ public class Administration extends javax.swing.JFrame {
         );
         jPanelJeuxEssaiLayout.setVerticalGroup(
             jPanelJeuxEssaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelJeuxEssaiLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelJeuxEssaiLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addComponent(jButtonSupprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(262, Short.MAX_VALUE))
             .addGroup(jPanelJeuxEssaiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelJeuxEssaiLayout.createSequentialGroup()
                     .addGap(21, 21, 21)
@@ -334,9 +341,21 @@ public class Administration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCreerActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       this.setVisible(false);
+       this.dispose();
        Page.pageAccueil.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed
+        
+
+
+
+String sqlabc = "DELETE FROM client; DELETE FROM personnel; DELETE FROM categorie;";
+        int Tuplesabc = DaoSIO.getInstance().requeteAction(sqlabc);
+        if (Tuplesabc == 1) {
+            System.out.println("Bien fait");
+        }
+    }//GEN-LAST:event_jButtonSupprimerActionPerformed
 
     /**
      * @param args the command line arguments
