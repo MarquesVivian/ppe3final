@@ -1,7 +1,7 @@
 # ppe3final
 PPE3 : logiciel de vente
 
-Pour modifier l’ip de la BDD il faut aller dans le code et modifier 
+Pour modifier l’ip de la BDD il faut aller dans le code et modifier DaoSio.java
 ![test](https://raw.githubusercontent.com/MarquesVivian/ppe3final/master/image/1.png)
 
 
